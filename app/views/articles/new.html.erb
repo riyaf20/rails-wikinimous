@@ -1,0 +1,10 @@
+<% @article.errors.full_messages.each do |message| %>
+  <p class="text-danger"><%= message %></p>
+<% end %>
+<%= form_with model: @article do |c| %>
+  <%= c.label :title %>
+  <%= c.text_field :title, class: 'form-control' %>
+  <%= c.label :content %>
+  <%= c.text_field :content, class: 'form-control' %>
+  <%= c.submit class: 'btn btn-primary mt-2' %>
+<% end %>
